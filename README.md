@@ -9,3 +9,6 @@ Often people have trouble programming in C++ (especially beginners) due to its l
 
 ## License
 pars is licensed under GNU General Public License (GPL) v3.0.<a href="https://github.com/aminasadiam/pars/blob/main/LICENSE">LICENSE</a>
+
+## The Team
+<a href="https://github.com/aminasadiam">Amin Asadi</a>
