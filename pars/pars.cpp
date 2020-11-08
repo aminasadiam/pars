@@ -16,24 +16,16 @@ int main(int argc, char *argv[])
 {
     string filename = "";
     // todo: debug argv size of
-    if (sizeof(argv[1]) >= 2)
+    for(int count{ 1 }; count < argc; ++count)
     {
-        filename = argv[1];
-        char Cfilename[filename.size() + 1];
-        strcpy(Cfilename, filename.c_str());
-
-        char *token = strtok(Cfilename, ".pars");
-        if (token == NULL)
-        {       
-            error("Incorrect file extension", 1);
+        if (count >= 2)
+        {
+            error("Please enter only the file with the .pars extension", -1);
         }
-        
-        cout << Cfilename << endl;
+        filename = argv[count];
     }
-    else
-    {
-        error("Please provide simc file path", -1);
-    }
+
+    cout << filename << endl;
 
     return 0;
 }
