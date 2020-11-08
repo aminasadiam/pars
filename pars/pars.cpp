@@ -10,6 +10,10 @@
 using namespace std;
 
 
+int main(){
+    run();
+}
+
 int run(char** argv)
 {
     string filename = "";
@@ -30,8 +34,5 @@ int run(char** argv)
     {
         error("Please provide simc file path", -1);
     }
-    
-
-
     return 0;
 }
