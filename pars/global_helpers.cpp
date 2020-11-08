@@ -10,3 +10,8 @@ int error(string message, int line_number)
     exit(0);
     return 0;
 }
+
+char is_digit(char ch)
+{
+    return ch["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
+}
