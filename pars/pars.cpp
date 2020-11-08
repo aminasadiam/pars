@@ -15,7 +15,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string filename = "";
-    // todo: debug argv size of
+
     for(int count{ 1 }; count < argc; ++count)
     {
         if (count >= 2)
@@ -23,6 +23,12 @@ int main(int argc, char *argv[])
             error("Please enter only the file with the .pars extension", -1);
         }
         filename = argv[count];
+        string delimiter = ".pars";
+        string token = filename.substr(0, filename.find(delimiter));
+        if(token == NULL)
+        {
+            error("Incorrect file extension", -1);
+        }
     }
 
     cout << filename << endl;
