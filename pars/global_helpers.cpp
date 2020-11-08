@@ -4,11 +4,10 @@
 
 using namespace std;
 
-int error(string message, int line_number)
+void error(string message, int line_number)
 {
-    cout << "\x1B[31mLine : \033[0m" << line_number << "\x1B[33m Error : \033[0m" << message << endl;
+    cout << "\x1B[31m[Line : \033[0m" << line_number << "\x1B[31m]\033[0m" << "\x1B[33m Error : \033[0m" << message << endl;
     exit(0);
-    return 0;
 }
 
 char is_digit(char ch)
