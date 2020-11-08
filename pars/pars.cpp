@@ -25,13 +25,9 @@ int main(int argc, char *argv[])
         filename = argv[count];
         string delimiter = ".pars";
         string token = filename.substr(0, filename.find(delimiter));
-        if(token == NULL)
-        {
-            error("Incorrect file extension", -1);
-        }
+        cout << token << endl;
+        // todo: fix token
     }
-
-    cout << filename << endl;
 
     return 0;
 }
