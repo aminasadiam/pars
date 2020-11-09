@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
         if(filename.substr(filename.find_last_of(".") + 1) == "pars")
         {
             token = filename.substr(0, filename.find(".pars"));
-            cppFilename = token + ".c";
+            cppFilename = token + ".cpp";
             cout << cppFilename << endl;
-            // todo: create Compiler for .pars to .c
+            // todo: create Compiler for .pars to .cpp
         }
         else
         {
