@@ -8,6 +8,7 @@
 
 
 #include "global_helpers.cpp"
+#include "op_codes.cpp"
 
 using namespace std;
 
@@ -30,8 +31,9 @@ int main(int argc, char *argv[])
         {
             token = filename.substr(0, filename.find(".pars"));
             cppFilename = token + ".cpp";
-            cout << cppFilename << endl;
-            // todo: create Compiler for .pars to .cpp
+            
+            createCppCode(cppFilename, "code test");
+            success("C++ code generated at ", cppFilename);
         }
         else
         {
