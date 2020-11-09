@@ -15,18 +15,28 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string filename = "";
+    string cppFilename = "";
+    string token = "";
 
     for(int count{ 1 }; count < argc; ++count)
     {
-        if (count >= 2)
+        if(count >= 2)
         {
             error("Please enter only the file with the .pars extension", -1);
         }
         filename = argv[count];
-        string delimiter = ".pars";
-        string token = filename.substr(0, filename.find(delimiter));
-        cout << token << endl;
-        // todo: fix token
+        
+        if(filename.substr(filename.find_last_of(".") + 1) == "pars")
+        {
+            token = filename.substr(0, filename.find(".pars"));
+            cppFilename = token + ".c";
+            cout << cppFilename << endl;
+            // todo: create Compiler for .pars to .c
+        }
+        else
+        {
+            error("Incorrect file extension", -1);
+        }
     }
 
     return 0;
