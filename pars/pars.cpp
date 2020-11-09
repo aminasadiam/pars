@@ -32,7 +32,8 @@ int main(int argc, char *argv[])
             token = filename.substr(0, filename.find(".pars"));
             cppFilename = token + ".cpp";
             
-            createCppCode(cppFilename, "code test");
+            string code = readParsFile(filename);
+            createCppCode(cppFilename, code);
             success("C++ code generated at ", cppFilename);
         }
         else
