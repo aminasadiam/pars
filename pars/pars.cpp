@@ -33,8 +33,17 @@ int main(int argc, char *argv[])
             cppFilename = token + ".cpp";
             
             string code = readParsFile(filename);
-            createCppCode(cppFilename, code);
-            success("C++ code generated at ", cppFilename);
+
+            if(code == "")
+            {
+                error("pars file is Empty", -1);
+            }
+            else
+            {
+                createCppCode(cppFilename, code);
+                success("C++ code generated at ", cppFilename);
+            }
+            
         }
         else
         {
