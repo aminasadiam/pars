@@ -15,8 +15,3 @@ void success(string message, string cppFilename)
     cout << "\033[92m[ SUCCESS ] " << message << cppFilename << endl;
     exit(0);
 }
-
-char is_digit(char ch)
-{
-    return ch["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
-}
