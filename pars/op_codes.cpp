@@ -20,9 +20,9 @@ string readParsFile(string filename)
     if(infile.is_open())
     {
         string line;
-        while (getline(infile, line, ' '))
+        while (getline(infile, line))
         {
-            result += line.c_str();
+            result += line + "\n";
         }
         infile.close();
     }
