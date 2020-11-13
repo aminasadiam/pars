@@ -25,14 +25,14 @@ string compile(string filename, string cppfilename)
         while (getline(inputfile, line))
         {
             // todo: debug find last of
-            if(line.substr(line.find_last_of("write") + 1) == "(")
+            if(line.substr(line.find("write") + 1) == "(")
             {
                 code = "#include <iostream>\n\n", "using namespace std\n", "int main()\n", "{\n",
                 "cout << ", "hello world" , " << endl;\n", "return 0;\n", "}\n";
             }
             else
             {
-                code += line.c_str();
+                code += line + "\n";
             }
         }
         
