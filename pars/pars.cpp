@@ -5,6 +5,7 @@
 #include <string>
 #include <cstring>
 #include <fstream>
+#include <sstream>
 
 
 #include "global_helpers.cpp"
@@ -15,8 +16,9 @@ using namespace std;
 
 string compile(string filename, string cppfilename)
 {
-    string code = "";
+    stringstream code;
     string line = "";
+    string result;
 
     ifstream inputfile(filename);
 
@@ -24,21 +26,16 @@ string compile(string filename, string cppfilename)
     {
         while (getline(inputfile, line))
         {
-            // todo: debug find last of
-            if(line.substr(line.find("write") + 1) == "(")
-            {
-                code = "#include <iostream>\n\n", "using namespace std\n", "int main()\n", "{\n",
-                "cout << ", "hello world" , " << endl;\n", "return 0;\n", "}\n";
-            }
-            else
-            {
-                code += line + "\n";
-            }
+            string value = getCode(line);
+            code << "#include <iostream>\n\n" << "using namespace std;\n" << "int main()\n" << "{\n" <<
+                "cout << \"" << value << "\" << endl;\n" <<  "return 0;\n" << "}\n";
+
+            result = code.str();
         }
         
     }
 
-    return code;
+    return result;
 }
 
 int main(int argc, char *argv[])
