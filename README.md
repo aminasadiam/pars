@@ -21,7 +21,7 @@ g++ pars.cpp
 To get a list of basic options and switches use:<br />
 `
 ./a.out -h
-`<br />
+`<br /><br />
 run project:<br />
 `
 ./a.out *.pars
