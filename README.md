@@ -9,20 +9,20 @@ Often people have trouble programming in C++ (especially beginners) due to its l
 </p>
 
 ## Installation
-you can download Pars by cloning the Git repository:
-`git clone https://github.com/aminasadiam/pars.git`
+you can download Pars by cloning the Git repository:<br />
+`git clone https://github.com/aminasadiam/pars.git`<br />
 
-and Compile code:
+and Compile code:<br />
 `
 g++ pars.cpp
 `
 
 ## Usage
-To get a list of basic options and switches use:
+To get a list of basic options and switches use:<br />
 `
 ./a.out -h
-`
-run project:
+`<br />
+run project:<br />
 `
 ./a.out *.pars
 `
