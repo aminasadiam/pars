@@ -38,17 +38,20 @@ string getCode(const string &line)
     
     size_t pos = line.find(VALUE);
 
-    if(pos != string::npos)
+    if(VALUE == "write")
     {
-        size_t beg = line.find_first_of(DOUBLE_QUOTE, pos);
-
-        if(beg != string::npos)
+        if(pos != string::npos)
         {
-            size_t end = line.find_first_of(DOUBLE_QUOTE, beg + 1);
+            size_t beg = line.find_first_of(DOUBLE_QUOTE, pos);
 
-            if(end != string::npos)
+            if(beg != string::npos)
             {
-                result = line.substr(beg + 1, end - beg - 1);
+                size_t end = line.find_first_of(DOUBLE_QUOTE, beg + 1);
+
+                if(end != string::npos)
+                {
+                    result = line.substr(beg + 1, end - beg - 1);
+                }
             }
         }
     }
