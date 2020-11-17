@@ -16,7 +16,12 @@ using namespace std;
 
 string compile(string filename, string cppfilename)
 {
+    string resultCode = "";
+    stringstream startcode;
+    stringstream endcode;
     stringstream code;
+    startcode << "#include <iostream>\n\n" << "using namespace std;\n\n" << "int main()\n" << "{\n";
+    endcode << "}\n";
     string line = "";
     string result;
 
@@ -27,8 +32,10 @@ string compile(string filename, string cppfilename)
         while (getline(inputfile, line))
         {
             string value = getCode(line);
-            code << "#include <iostream>\n\n" << "using namespace std;\n" << "int main()\n" << "{\n" <<
-                "cout << \"" << value << "\" << endl;\n" <<  "return 0;\n" << "}\n";
+            
+            resultCode = "cout << " + value + " << endl;\n";
+
+            code << startcode.str() << resultCode << "return 0;\n" << endcode.str();
 
             result = code.str();
         }
