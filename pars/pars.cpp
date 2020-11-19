@@ -39,9 +39,7 @@ string compile(string filename, string cppfilename)
 
             result = code.str();
         }
-        
     }
-
     return result;
 }
 
@@ -76,13 +74,11 @@ int main(int argc, char *argv[])
                 createCppCode(cppFilename, code1);
                 success("C++ code generated at ", cppFilename);
             }
-            
         }
         else
         {
             error("Incorrect file extension", -1);
         }
     }
-
     return 0;
 }
