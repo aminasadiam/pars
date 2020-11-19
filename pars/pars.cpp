@@ -80,5 +80,6 @@ int main(int argc, char *argv[])
             error("Incorrect file extension", -1);
         }
     }
+    
     return 0;
 }
