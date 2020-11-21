@@ -5,12 +5,15 @@
 
 using namespace std;
 
+
 int createCppCode(string cppFilename, string code)
 {
     ofstream output (cppFilename);
     output << code << endl;
+
     return 0;
 }
+
 
 string readParsFile(string filename)
 {
@@ -25,8 +28,10 @@ string readParsFile(string filename)
         }
         infile.close();
     }
+
     return result;
 }
+
 
 string getCode(const string &line)
 {
@@ -53,5 +58,6 @@ string getCode(const string &line)
             }
         }
     }
+
     return result;
 }

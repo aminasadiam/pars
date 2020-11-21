@@ -40,8 +40,10 @@ string compile(string filename, string cppfilename)
             result = code.str();
         }
     }
+
     return result;
 }
+
 
 int main(int argc, char *argv[])
 {
