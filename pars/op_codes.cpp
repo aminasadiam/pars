@@ -59,5 +59,5 @@ string getCode(const string &line)
         }
     }
 
-    return result;
+    return "\"" + result + "\"";
 }
