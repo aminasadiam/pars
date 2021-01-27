@@ -29,16 +29,18 @@ string compile(string filename, string cppfilename)
 
     if(inputfile.is_open())
     {
+        code << startcode.str();
         while (getline(inputfile, line))
         {
             string value = getCode(line);
             
             resultCode = "cout << " + value + " << endl;\n";
 
-            code << startcode.str() << resultCode << "return 0;\n" << endcode.str();
-
-            result = code.str();
+            code << resultCode;
         }
+
+        code << "return 0;\n" << endcode.str();
+        result = code.str();
     }
 
     return result;
