@@ -32,11 +32,15 @@ string compile(string filename, string cppfilename)
         code << startcode.str();
         while (getline(inputfile, line))
         {
-            string value = getCode(line);
+            if (line != "")
+            {
+                string value = getCode(line);
             
-            resultCode = "cout << " + value + " << endl;\n";
+                resultCode = "cout << " + value + " << endl;\n";
 
-            code << resultCode;
+                code << resultCode;
+            }
+            
         }
 
         code << "return 0;\n" << endcode.str();
