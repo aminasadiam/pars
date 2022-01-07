@@ -32,4 +32,3 @@ pars is licensed under GNU General Public License (GPL) v3.0.<a href="https://gi
 
 ## The Team
 <a href="https://github.com/aminasadiam">Amin Asadi</a><br />
-<a href="https://github.com/MohammadAmirMohammadi">Mohammad Amir Mohammadi</a>
